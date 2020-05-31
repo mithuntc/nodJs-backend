@@ -24,7 +24,10 @@ router.post("/", (req, res, next) => {
   const product = new Product({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
-    price: req.body.price,
+    address: req.body.address,
+    donation: req.body.donation,
+    mobile: req.body.mobile,
+    sports:req.body.sports
   });
   product
     .save()

@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 });
 
 //Handling Routes
-app.use("/products", productRoutes);
+app.use("/api/products", productRoutes);
 app.use("/orders", orderRoutes);
 app.use('/api/auth', AuthController);
 
