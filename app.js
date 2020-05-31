@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const productRoutes = require("./api/routes/product");
-const orderRoutes = require("./api/routes/order");
 const AuthController = require("./api/auth/AuthController");
 
 //mongoose connect
@@ -35,7 +34,6 @@ app.use((req, res, next) => {
 
 //Handling Routes
 app.use("/api/products", productRoutes);
-app.use("/orders", orderRoutes);
 app.use('/api/auth', AuthController);
 
 

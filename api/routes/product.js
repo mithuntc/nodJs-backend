@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const Product = require("../models/product");
 
-router.get("/", (req, res, next) => {
+/*router.get("/", (req, res, next) => {
   Product.find().exec().then(docs => {
     // if (docs.length >= 0){
       // console.log(docs);
@@ -19,7 +19,7 @@ router.get("/", (req, res, next) => {
       errror: err
     });
   });
-});
+});*/
 router.post("/", (req, res, next) => {
   const product = new Product({
     _id: new mongoose.Types.ObjectId(),
