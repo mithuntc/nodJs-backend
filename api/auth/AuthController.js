@@ -30,20 +30,20 @@ router.post('/register', function(req, res) {
     }); 
   });
 
- // for getting product list 
-  router.get('/products', function(req, res) {
-    var token = req.headers['x-access-token'];
-    if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
+//  // for getting product list 
+//   router.get('/products', function(req, res) {
+//     var token = req.headers['x-access-token'];
+//     if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
     
-    Product.find().exec().then(docs => {
-        res.status(200).json(docs);
-      }).catch( err => {
-      console.log(err);
-      res.status(500).json({
-        errror: err
-      });
-    });
-  });
+//     Product.find().exec().then(docs => {
+//         res.status(200).json(docs);
+//       }).catch( err => {
+//       console.log(err);
+//       res.status(500).json({
+//         errror: err
+//       });
+//     });
+//   });
 
   
   router.get('/users', function(req, res) {
