@@ -5,15 +5,14 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const productRoutes = require("./api/routes/product");
+const playerRoutes = require('./api/routes/player')
 const AuthController = require("./api/auth/AuthController");
 
 //mongoose connect
 mongoose.connect(
-  "mongodb+srv://ajmalfaiz:" +
-    process.env.MONGO_ATLAS_PWD +
-    "@node-rest-shop-vydm3.mongodb.net/test?retryWrites=true&w=majority",
+  "mongodb://localhost:27017",
   { useNewUrlParser: true, useUnifiedTopology: true }
-);
+).then(() => console.log("DB Connected")).catch((err) => console.log(err))
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,6 +33,7 @@ app.use((req, res, next) => {
 
 //Handling Routes
 app.use("/api/products", productRoutes);
+app.use("/api/players", playerRoutes);
 app.use('/api/auth', AuthController);
 
 
